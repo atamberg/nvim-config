@@ -38,3 +38,16 @@ vim.keymap.set('v', 'K', '{', { desc = 'Move up to whitespace' })
 
 -- Clear highlight on pressing <Esc> in normal mode
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
+vim.keymap.set('n', '<leader>k', vim.lsp.buf.hover, { desc = 'Hover Documentation' })
+
+vim.keymap.set('n', '<leader>ql', vim.diagnostic.setloclist, { desc = 'Open [Q]uick fix [L]ist' })
+
+vim.keymap.set('n', '<leader>qf', function()
+  vim.lsp.buf.code_action {
+    filter = function(a)
+      return a.isPreferred
+    end,
+    apply = true,
+  }
+end, { desc = '[Q]uick [F]ix' })
