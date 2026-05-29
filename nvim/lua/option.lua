@@ -85,3 +85,10 @@ vim.opt.termguicolors = true
 vim.g.have_nerd_font = true
 
 vim.opt.completeopt = 'menu,menuone,noinsert,fuzzy,popup'
+
+-- Highlight when yanking text
+--  See `:help vim.hl.on_yank()`
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = "Briefly highlight yanked text",
+  callback = function() vim.hl.on_yank() end,
+})
