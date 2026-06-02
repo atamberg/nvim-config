@@ -11,4 +11,4 @@ require('oil').setup({
     -- constrain_cursor = "name",
 })
 
-vim.keymap.set('n', '<leader>o', "<CMD>Oil<CR>", { desc = 'Open explorer' })
+vim.keymap.set('n', '-', "<CMD>Oil<CR>", { desc = 'Open explorer' })
